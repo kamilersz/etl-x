@@ -1,0 +1,1 @@
+java com.etlx.mapper.CSVToSQL %*

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>DBSchemaToOnto</servlet-name>
+        <servlet-class>com.etlx.web.DBSchemaToOnto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBSchemaToOnto</servlet-name>
+        <url-pattern>/dbschematoonto</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GenerateMappingScript</servlet-name>
+        <servlet-class>com.etlx.web.GenerateMappingScript</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateMappingScript</servlet-name>
+        <url-pattern>/generatemappingscript</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Migrate</servlet-name>
+        <servlet-class>com.etlx.web.Migrate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Migrate</servlet-name>
+        <url-pattern>/migrate</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Schema2Schema</servlet-name>
+        <servlet-class>com.etlx.web.Schema2Schema</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Schema2Schema</servlet-name>
+        <url-pattern>/schema2schema</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>  
+    <listener>
+        <listener-class>
+            org.apache.commons.fileupload.servlet.FileCleanerCleanup
+        </listener-class>
+    </listener>
+<!--
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>web</web-resource-name>
+    <url-pattern>/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>protected</role-name>
+  </auth-constraint>
+</security-constraint>
+<login-config>
+  <auth-method>BASIC</auth-method>
+  <realm-name>Access Restricted: ETL-X</realm-name>
+</login-config>
+!-->
+</web-app>

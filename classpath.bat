@@ -1,0 +1,1 @@
+SET CLASSPATH=.\lib\*;.\dist\classes;%CLASSPATH%
